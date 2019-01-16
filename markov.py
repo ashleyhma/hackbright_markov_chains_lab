@@ -77,7 +77,47 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
 
+    import random
+
     words = []
+    # print(chains)
+
+    
+    for tuple_key, choices in chains.items():
+        # print(tuple_key)
+        next_word = random.choice(choices)
+        # print(next_word)
+ 
+        tuple_key_list = [tuple_key[0]] + [tuple_key[1]]
+        
+        # print(tuple_key_list)
+        our_new_list = (tuple_key_list) + [next_word]
+        # print(our_new_list)
+        words.append(our_new_list)
+
+        next_key_words = our_new_list[1:]
+        # print(next_key_words)
+
+        
+
+
+        
+
+
+    
+        # print(phrase_list)
+
+
+        # words.append(our_new_phrase)
+        # print(words)
+
+        # for new_key,value in chains:
+        #     new_next_word = random.choice(value)
+        #     new_new_phrase = new_key + new_next_word
+
+        # print(key, "strings")
+        # print(next_word, "next")
+        # print(our_new_phrase, "new")
 
     # your code goes here
 
