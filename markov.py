@@ -79,31 +79,42 @@ def make_text(chains):
 
     import random
 
-    words = []
-    # print(chains)
-
     
-    for tuple_key, choices in chains.items():
+    
+    
+    # tuple_key_list = [tuple_key[0]] + [tuple_key[1]]
+    key = random.choice(list(chains.keys()))
+    # next_word = random.choice(choices)
+    next_word = random.choice(chains[key])
+
+    words = [key[0], key[1]]
+
+    while next_word is not None:
+
+        # if tuple_key in chains_list:
         # print(tuple_key)
-        next_word = random.choice(choices)
-        # print(next_word)
- 
-        tuple_key_list = [tuple_key[0]] + [tuple_key[1]]
-        
-        # print(tuple_key_list)
-        our_new_list = (tuple_key_list) + [next_word]
-        # print(our_new_list)
-        words.append(our_new_list)
+        # next_word_list = chains[tuple_key]
 
-        next_key_words = our_new_list[1:]
+        key = (key[1], next_word)
+
+        words.append(next_word)
+
+        next_word = random.choice(chains[key])
+        
+        
+
+        # words.append(next_word)
+
+        # print(words, "after")
+
+
+
+        # for tuple_key, choices in chains.items():
+        
+        # words.append(our_new_list)
+
+        # next_key_words = our_new_list[1:]
         # print(next_key_words)
-
-        
-
-
-        
-
-
     
         # print(phrase_list)
 
